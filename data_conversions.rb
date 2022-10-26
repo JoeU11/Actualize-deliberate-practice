@@ -6,7 +6,14 @@
 #   hash[nums[0]] = nums[1]
 # end
 # p hash
-  
+
+# array = [[1, 3], [8, 9], [2, 16]]
+# output = {}
+# array.each do |inner_array|
+# output[inner_array[0]] = inner_array[1]
+# end
+
+# p output
 
 #  2. Convert an array of hashes into a hash using the :id key from the array's hashes as the keys in the new hash.
 #     For example, [{id: 1, color: "blue", price: 32}, {id: 2, color: "red", price: 12}] becomes {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}.
@@ -92,15 +99,46 @@
 
 #  8. Combine data from a hash with names and prices and an array of hashes with names, colors, and weights to make a new hash.
 #     For example, {"chair" => 75, "book" => 15} and [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}] becomes {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}.
+# prices = {"chair" => 75, "book" => 15}
+# descriptions = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
+# output = {}
 
+# descriptions.each do |item|
+# output[item[:name]] = {
+#   price: prices[item[:name]],
+#   color: item[:color],
+#   weight: item[:weight]
+# }
+# end
 
-input_hash = 
+# p output
 
 #  9. Convert an array of hashes into a hash of arrays, using the author as keys and the titles as values.
 #     For example, [{author: "Jeff Smith", title: "Bone"}, {author: "George Orwell", title: "1984"}, {author: "Jeff Smith", title: "RASL"}] becomes {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}.
 
+# input = [{author: "Jeff Smith", title: "Bone"}, {author: "George Orwell", title: "1984"}, {author: "Jeff Smith", title: "RASL"}]
+# output = {}
+# input.each do |book| 
+#   if output[book[:author]]
+#     output[book[:author]].push(book[:title])
+#   else
+#     output[book[:author]] = [book[:title]]
+#   end
+# end
+
+# p input
+# p output
+
 # 10. Given a hash, create a new hash that has the keys and values switched.
 #     For example, {"a" => 1, "b" => 2, "c" => 3} becomes {1 => "a", 2 => "b", 3 => "c"}.
 
+# hash = {"a" => 1, "b" => 2, "c" => 3}
+# output = {}
+# keys = hash.keys
+# keys.each do |key|
+#   output[hash[key]] = key
+# end
 
+# p hash
+# p output
 # SOLUTIONS: https://gist.github.com/peterxjang/216a7a6e8411ee5c05118e78022f2bc7
